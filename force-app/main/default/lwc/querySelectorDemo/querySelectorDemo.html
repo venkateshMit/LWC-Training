@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-14-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Query Selector">
+        <div class="slds-m-around_medium">
+            <h1>Iam Heading</h1>
+            <template for:each={userNames} for:item="user">
+                <div class="name" title={user} key={user}>
+                    {user}
+                </div>
+            </template>
+            <div class="child" lwc:dom="manual"></div>
+        <lightning-button 
+            variant="brand"
+            label="Fetch Details..." 
+            onclick={fetchDetailsHandleClick} >
+        </lightning-button>
+        </div>
+        
+    </lightning-card>
+   
+</template>

@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-09-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    
+    <lightning-card title="Child to Parent Communication" icon-name="custom:custom14">
+        <div class="slds-m--around_medium"  onclose={closeHadnler}>
+            <lightning-button label="Show Modal"
+                              onclick={clickHandler}>
+
+            </lightning-button>
+            <h1>{msg}</h1>
+            <template if:true={showModal}>
+                <c-c2p-modal-component
+                   >
+
+                </c-c2p-modal-component>
+                <!-- <c-c2p-modal-component
+                    onclose={closeHadnler}>
+
+                </c-c2p-modal-component> -->
+            </template>
+        </div>
+    </lightning-card>
+     
+    
+</template>

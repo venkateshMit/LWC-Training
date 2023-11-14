@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-m-around_medium">
+            <lightning-button 
+                variant="brand" label="Show Data" 
+                title="Show Data" onclick={handleClick} 
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <template if:true={isVisible}>
+                <div> Welcome to Salesforce LWC Training!!</div>
+            </template>
+            <template if:false={isVisible}>
+                <div>You Can't See the data, Pleaes click the button!!</div>
+            </template>
+        </div>  
+        <lightning-card>
+            <div class="slds-m-around_medium">
+                <lightning-input type="text" 
+                                label="Type hello to See the Data" 
+                                onkeyup={changeHandler}>
+                </lightning-input>
+                <template lwc:if={helloMethod}>
+                    <div >
+                        Hurray!! You typed correcctly
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div >
+                        No!! You typed In Correct
+                    </div>
+                </template>
+                
+            </div>
+        </lightning-card>
+        
+    </lightning-card>
+    
+</template>
