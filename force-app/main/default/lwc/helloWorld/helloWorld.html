@@ -1,0 +1,44 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-02-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <!-- <div>
+       {fullName}
+    </div> -->
+    
+    <lightning-card title="Two way Binding ">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" 
+                            label="Enter the Course" 
+                            onkeyup={changeHandler}>
+            </lightning-input>
+             <div>
+                {fullName} is a course of {title}
+             </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="@track Property">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" 
+                            label="Enter the City" 
+                            onkeyup={trackHandler}>
+            </lightning-input>
+             <div>
+                {address.city}  is My City
+             </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="getter Demo">
+        <div class="slds-m-around_medium">
+           <div>First User Name is : {firstUser}</div>
+           <div>Multiplication of {num1} & {num2} is {multiply}</div>
+        </div>
+        
+    </lightning-card>
+</template>

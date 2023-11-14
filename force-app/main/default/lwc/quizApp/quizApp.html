@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-07-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Quiz App">
+        <div class="slds-m-around_medium">
+            
+           
+            <form>
+                <template for:each={myQuestions} for:item="quiz">
+                    <div class="slds-m-around_medium" key={quiz.id}>
+                        <div>
+                            <strong>{quiz.id} - {quiz.question}</strong>
+                            <div class="slds-grid slds-gutters slds-p-around_medium">
+                                <div class="slds-col">
+                                    <input  type="radio" name={quiz.id} value="a" onchange={changeHandler}/>
+                                    {quiz.answers.a}
+                                </div>
+                                <div class="slds-col ">
+                                    <input  type="radio" name={quiz.id} value="b" onchange={changeHandler}/>
+                                    {quiz.answers.b}
+                                </div>
+                                <div class="slds-col">
+                                    <input  type="radio" name={quiz.id} value="c" onchange={changeHandler}/>
+                                    {quiz.answers.c}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </template>
+                <lightning-button variant="brand" title="Submit Quiz" type="Submit" label="Submit" class="slds-m-around_small"  onclick={submitHandler} disabled={allNotSelected}>
+                </lightning-button>
+                <lightning-button variant="brand" title="Reset Quiz" type="Reset" label="Reset" class="slds-m-around_small" onclick={resetHandler}>
+                </lightning-button>
+            </form>
+            <template lwc:if={isSubmitted}>
+                <div class={isScoredFull}>
+                    You have Scored {correctAnswers} out of {myQuestions.length}
+                </div>
+            </template>
+        </div>
+
+
+    </lightning-card>
+</template>

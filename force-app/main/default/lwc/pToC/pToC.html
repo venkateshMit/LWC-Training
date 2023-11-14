@@ -1,0 +1,44 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-08-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <!-- Simple data passing -->
+  <div class="slds-m-around_medium">
+      <lightning-card title="Component Communication" icon-name="custom:custom14">
+          <c-p-to-c-alert message =  "I got the data!!!" 
+          card-heading="Primitive Communication"
+          number=20
+          is-valid=false
+          ></c-p-to-c-alert>
+          
+      </lightning-card>
+    </div>
+    <!-- Complex data passing -->
+    <div class="slds-m-around_medium">
+      <lightning-card title="Non Primitive Communication" icon-name="custom:custom14">
+        <c-parent-to-child carosule-details={carouselData}></c-parent-to-child>
+      </lightning-card>
+    </div>
+
+    <!-- Passing data on Action -->
+    <div class="slds-m-around_medium">
+      <lightning-card title="Parent to Child Communication :Action" icon-name="custom:custom14">
+        <lightning-input type="number"  label="Enter Percentage" value={percentage} onkeyup={changeHadnler}></lightning-input><c-p-to-c-progress-bar></c-p-to-c-progress-bar>
+        <c-p-to-c-progress-bar 
+        progress-value={percentage}></c-p-to-c-progress-bar>
+      </lightning-card>
+    </div>
+
+    <!-- Calling Child method from parent -->
+    <div class="slds-m-around_medium">
+      <lightning-card title="Calling Child Method From Parent" icon-name="custom:custom14">
+        <lightning-button variant="brand" label="Reset Slider" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        <c-p-to-c-slider-component></c-p-to-c-slider-component>
+      </lightning-card>
+    </div>
+
+</template>
